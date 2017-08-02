@@ -1,0 +1,4 @@
+{
+    "getLastInvoiceNumberQuery": "SELECT id FROM Invoice ORDER BY id DESC LIMIT 1;",
+    "addNewInvoiceQuery":"INSERT INTO Invoice ( reverseCharge,invioceDate, state, stateCode,transportationMode,vehicleNumber, dateOfSupply,placeOfSupply,customerName,customerAddress,consigneeName,consigneeAddress,hsnCode) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?)"
+}

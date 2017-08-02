@@ -1,0 +1,194 @@
+<div class="main-content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="header">
+                        <h4 class="title"></h4>
+                    </div>
+                    <div class="content">
+                        <form>
+                            <div class="row">
+                                <div class="col-md-6">
+                                     <div class="form-group">
+                                        <label>Reverce Charge:</label>
+                                        <input type="text" name="invoice-id" class="form-control" placeholder="Reverce charge" [(ngModel)]="invoice.reverseCharge"
+                                            value="">
+                                    </div> 
+                                    <div class="form-group">
+                                        <label>Invoice Date</label>
+                                        <input type="date" name="invoice-date" class="form-control" [(ngModel)]="invoice.invoiceDate" placeholder="Invoice date"
+                                            value="">
+                                    </div>
+                                    <div class="form-group">
+                                        <label>State</label>
+                                        <input type="text" name="invoice-state" class="form-control" [(ngModel)]="invoice.state" placeholder="State" value="">
+                                    </div>
+                                    <div class="form-group">
+                                        <label>State Code:</label>
+                                        <input type="text" name="invoice-state-code" class="form-control" [(ngModel)]="invoice.stateCode" placeholder="State code"
+                                            value="">
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label>Transportation Mode:</label>
+                                        <input type="text" name="invoice-transportationmode" class="form-control" placeholder="Transportation mode" [(ngModel)]="invoice.transportationMode"
+                                            value="">
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Vehicle Number:</label>
+                                        <input type="text" name="vehicle-number" class="form-control" placeholder="Vehicle number" [(ngModel)]="invoice.vehicleNumber"
+                                            value="">
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Date of supply:</label>
+                                        <input type="date" name="date-of-supply" class="form-control" placeholder="Date of supply" [(ngModel)]="invoice.dateOfSupply"
+                                            value="">
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Place of Supply:</label>
+                                        <input type="text" name="place-of-supply" class="form-control" placeholder="Place of supply" [(ngModel)]="invoice.placeOfSupply"
+                                            value="">
+                                    </div>
+                                </div>
+                            </div>
+                            <hr>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label>Details of Receiver (Billed to):</label>
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Name:</label>
+                                        <input type="text" name="customername" class="form-control" placeholder="name" [(ngModel)]="invoice.customerName" value="">
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Address:</label>
+                                        <textarea rows="5" name="customer-address" class="form-control" placeholder="Address" [(ngModel)]="invoice.customerAddress"
+                                            value=""></textarea>
+                                    </div>
+                                    <!-- <div class="form-group">
+                                        <label>GSTIN:</label>
+                                        <input type="text" class="form-control" disabled placeholder="GSTIN" value="24AHIPP1593N1ZT" />
+                                    </div> -->
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label>Details of Consignee (Shipped to):</label>
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Name:</label>
+                                        <input type="text" class="form-control" name="consignee-name" placeholder="name" [(ngModel)]="invoice.consigneeName" value="">
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Address:</label>
+                                        <textarea rows="5" class="form-control" placeholder="Address" name="consignee-address" [(ngModel)]="invoice.consigneeAddress"
+                                            value=""></textarea>
+                                    </div>
+                                    <!-- <div class="form-group">
+                                        <label>GSTIN:</label>
+                                        <input type="text" class="form-control" disabled placeholder="GSTIN" value="24AHIPP1593N1ZT" />
+                                    </div> -->
+                                </div>
+                            </div>
+                            <hr>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="col-md-3">
+                                        <div class="form-group">
+                                            <label>Product Name:</label>
+                                            <input name="item-name" type="text" class="form-control" placeholder="product name" value="" [(ngModel)]="item.name" />
+                                        </div>
+                                    </div>
+                                    <div class="col-md-2">
+                                        <div class="form-group">
+                                            <label>Package Type:</label>
+                                            <input name="package-type" type="number" class="form-control" value="" [(ngModel)]="item.packageType" />
+                                        </div>
+                                    </div>
+                                    <div class="col-md-1">
+                                        <div class="form-group">
+                                            <label>Quantity:</label>
+                                            <input name="quantity" type="number" class="form-control" value="" [(ngModel)]="item.quantity" />
+                                        </div>
+                                    </div>
+                                    <div class="col-md-2">
+                                        <div class="form-group">
+                                            <label>Price:</label>
+                                            <input name="price" type="number" class="form-control" value="" [(ngModel)]="item.price" />
+                                        </div>
+                                    </div>
+                                    <div class="col-md-2">
+                                        <div class="form-group">
+                                            <label>Discount:</label>
+                                            <input name="discount" type="number" class="form-control" value="" [(ngModel)]="item.discount" />
+                                        </div>
+                                    </div>
+                                    <div class="col-md-2">
+                                        <div class="form-group">
+                                            <label></label>
+                                            <button class="btn btn-default form-control" (click)="addItem(item)">Add</button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-12">
+                                    <table class="table table-hover col-md-12">
+                                        <thead>
+                                            <th>Product Name</th>
+                                            <th>Package Type</th>
+                                            <th>Quantity</th>
+                                            <th>Price</th>
+                                            <th>Discount</th>
+                                        </thead>
+                                        <tbody>
+                                            <tr *ngFor="let model of items">
+                                                <td class="col-md-3">
+                                                    <label [style.display]="editItemText">{{model.name}}</label>
+                                                    <input name="item-name-edit" [style.display]="editItem" type="text" class="form-control" placeholder="product name" value=""
+                                                        [(ngModel)]="model.name" />
+                                                </td>
+                                                <td class="col-md-2">
+                                                    <label [style.display]="editItemText">{{model.packageType}}</label>
+                                                    <input name="package-type-edit" [style.display]="editItem" type="number" class="form-control" value="" [(ngModel)]="model.packageType"
+                                                    />
+                                                </td>
+                                                <td class="col-md-1">
+                                                    <label [style.display]="editItemText">{{model.quantity}}</label>
+                                                    <input name="quantity-edit" [style.display]="editItem" type="number" class="form-control" value="" [(ngModel)]="model.quantity"
+                                                    />
+                                                </td>
+                                                <td class="col-md-2">
+                                                    <label [style.display]="editItemText">{{model.price}}</label>
+                                                    <input name="price-edit" [style.display]="editItem" type="number" class="form-control" value="" [(ngModel)]="model.price"
+                                                    />
+                                                </td>
+                                                <td class="col-md-2">
+                                                    <label [style.display]="editItemText">{{model.discount}}</label>
+                                                    <input [style.display]="editItem" name="discount" type="number" class="form-control" value="" [(ngModel)]="model.discount"
+                                                    />
+                                                </td>
+                                                <td>
+                                                    <button [style.display]="editItemText" class="btn btn-default col-md-6" (click)="editItems()">Edit</button>
+                                                    <button [style.display]="editItemText" class="btn btn-danger col-md-6" (click)="removeItem(item)">Remove</button>
+                                                    <button [style.display]="editItem" class="btn btn-danger col-md-4" (click)="saveEditedValues()">Done</button>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                            <div class="btn-toolbarp pull-right col-md-3">
+                                <a class="btn btn-info btn-fill col-md-6 pull-left" (click)="printPreview()">Print view</a>
+
+                                <button type="button" class="btn btn-info btn-fill col-md-5 pull-right" (click)="saveInvoice(invoice)">Create</button>
+                            </div>
+                            <div class="clearfix"></div>
+                        </form>
+                    </div>
+                    <div></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
